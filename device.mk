@@ -6,6 +6,7 @@
 #
 
 LOCAL_PATH := device/xiaomi/agate
+
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -13,7 +14,7 @@ AB_OTA_POSTINSTALL_CONFIG += \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
 
-# Boot control HAL
+# Boot control HAL (روش جدید و صحیح)
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-impl \
     android.hardware.boot@1.0-service
@@ -21,11 +22,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     bootctrl.mt6893
 
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    bootctrl.mt6893 \
-    libgptutils \
-    libz \
-    libcutils
+# این بلوک را کامل حذف کنید
+# PRODUCT_STATIC_BOOT_CONTROL_HAL := \
+#     bootctrl.mt6893 \
+#     libgptutils \
+#     libz \
+#     libcutils
 
 PRODUCT_PACKAGES += \
     otapreopt_script \
